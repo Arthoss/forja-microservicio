@@ -25,7 +25,7 @@ def tip_aleatorio():
         conexion = obtener_conexion()
         try:
             cursor = conexion.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-            cursor.execute("SELECT texto, categoria FROM tips;")
+            cursor.execute("SELECT id, texto, categoria FROM tips;")
             tips = cursor.fetchall()
             cursor.close()
         finally:
